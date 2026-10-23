@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
         card(page,"1. Save a colour");
         page.addView(button("Take / choose fabric photo",()->pick(PICK_SAVE)));
         preview=new ImageView(this);preview.setAdjustViewBounds(true);preview.setMaxHeight(dp(190));page.addView(preview);
-        sampled=text("No photo selected");page.addView(sampled);
+        sample = text("No photo selected", 14);
         name=edit("Colour name (required) e.g. Mid Brown");page.addView(name);
         quality=edit("Fabric quality");page.addView(quality);
         roll=edit("Roll / lot number");page.addView(roll);
@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
         page.addView(button("Take / choose photo to match",()->pick(PICK_MATCH)));
         matchPreview=new ImageView(this);matchPreview.setAdjustViewBounds(true);matchPreview.setMaxHeight(dp(160));page.addView(matchPreview);
         page.addView(button("FIND CLOSEST MATCHES",()->findMatches()));
-        matches=text("Choose a photo, then tap Find Closest Matches.");page.addView(matches);
+        matches = text("Choose a photo, then tap Find Closest Matches.", 14);
         card(page,"3. My saved colours");
         search=edit("Search name, quality or roll number");page.addView(search);
         search.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int st,int c,int a){} public void onTextChanged(CharSequence s,int st,int before,int count){refreshLibrary(s.toString());}public void afterTextChanged(Editable e){}});
